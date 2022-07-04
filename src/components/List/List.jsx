@@ -1,16 +1,18 @@
 import React from "react";
 import ListItem from "./ListItem/ListItem";
 
-const List = ({ listData, setListData }) => {
+const List = ({ listData, setListData, dataToShow, fetchTasksList }) => {
 
     return(
         <ul className="list-group todo-list">
             {
-                listData.map( taskItem => (
+                dataToShow.map( taskItem => (
                     <ListItem
                         key={ taskItem.id }
                         taskItem={ taskItem }
+                        listData={ listData }
                         setListData={ setListData }
+                        fetchTasksList={ fetchTasksList }
                     />
                 ))
             }

@@ -115,8 +115,7 @@ body {
 }
 
 #root {
-  background-image: linear-gradient(to right top, #d16ba5, #ab639f, #865b93, #635282, #46476d, #425174, #415a79, #42637d, #5788a0, #6fafc0, #8dd6de, #b1fffa);
-  height: 100vh;
+
 }
 
 
@@ -189,7 +188,7 @@ body {
   border-radius: 10px;
 }
 .todo-header__title {
-  font-size: 32px;
+  font-size: 24px;
   color: black;
 }
 .todo-header__todo-info {

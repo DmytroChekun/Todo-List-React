@@ -9,10 +9,13 @@ const ListItemDates = ({ createDate, finishDate }) => {
                 <img src={ addIco } alt="add" />
                 { createDate }
             </span>
-            <span className="todo-list__finish-date">
-                <img src={ doneIco } alt="done" />
-                { finishDate }
-            </span>
+            {
+                finishDate &&
+                <span className="todo-list__finish-date">
+                    <img src={doneIco} alt="done"/>
+                    { finishDate }
+                </span>
+            }
         </span>
     )
 }

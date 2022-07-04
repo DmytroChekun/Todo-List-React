@@ -10,10 +10,10 @@ const HeaderInfo = ({ listData }) => {
 
     return(
         <div className="todo-header__top-section">
-            <h1 className="todo-header__title">Todo list</h1>
+            <h1 className="todo-header__title">TODO LIST</h1>
             <h2 className="todo-header__todo-info">
                 <span className="todo-count">{ activeTasksCount }</span> more to do,
-                <span className="done-count">{ doneTasksCount }</span> done
+                <span className="done-count"> { doneTasksCount }</span> done
             </h2>
         </div>
     )

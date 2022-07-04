@@ -1,34 +1,35 @@
 import React from "react";
 
-const FilterBar = () => {
+const FilterBar = ({ filterState, setFilterState }) => {
 
     const buttonsData = [
         {
-            classValue: 'all',
+            value: 'all',
             textValue: 'All',
-            active: true
+            active: filterState === "all"
         },
         {
-            classValue: 'todo',
+            value: 'todo',
             textValue: 'Active',
-            active: false
+            active: filterState === "todo"
         },
         {
-            classValue: 'done',
+            value: 'done',
             textValue: 'Done',
-            active: false
+            active: filterState === "done"
         }
     ]
 
-    return(
+    return (
         <div className="filter-btns">
             {
                 buttonsData.map( data => (
                     <button
-                        key={ data.classValue }
+                        key={ data.value }
+                        onClick={ ()=> setFilterState( data.value ) }
                         className={
                             `filter-btn 
-                            ${data.classValue}
+                            ${data.value}
                             ${data.active ? 'active' : ''}`
                         }>
                         { data.textValue }
