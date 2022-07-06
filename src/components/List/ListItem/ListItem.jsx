@@ -14,22 +14,24 @@ const ListItem = ({ taskItem, setListData, listData, fetchTasksList }) => {
     const toggleDoneState = () => {
         let done, finishDate;
 
-        listData.map( item => {
+        setListData( listData.map( item => {
             if (item.id === id) {
-                done = !item.done;
+                item.done = !item.done;
+                done = item.done;
                 done ?
-                    finishDate = new Date().toLocaleString()
+                    item.finishDate = new Date().toLocaleString()
                     :
-                    finishDate = null;
+                    item.finishDate = null;
+                finishDate = item.finishDate;
             }
-        });
+            return item
+        }));
 
-        axios.put(`https://6274f9b95dc4f5764b9c52e4.mockapi.io/todo/tasks/${ id }`, { done: done, finishDate: finishDate } )
-            .then(fetchTasksList);
+        axios.put(`https://6274f9b95dc4f5764b9c52e4.mockapi.io/todo/tasks/${ id }`, { done: done, finishDate: finishDate } );
     }
 
     return (
-        <li className={ listItemClasses } onClick={ toggleDoneState } >
+        <li className={ listItemClasses } onClick={ toggleDoneState }>
             <div className="todo-list__item-content">
                 <span className="todo-list__item-label"> { text } </span>
                 <ListItemDates createDate={ createDate } finishDate={ finishDate } />

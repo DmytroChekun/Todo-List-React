@@ -8,7 +8,7 @@ const List = ({ listData, setListData, dataToShow, fetchTasksList }) => {
             {
                 dataToShow.map( taskItem => (
                     <ListItem
-                        key={ taskItem.id }
+                        key={taskItem.id}
                         taskItem={ taskItem }
                         listData={ listData }
                         setListData={ setListData }

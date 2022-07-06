@@ -444,3 +444,8 @@ body {
 .add-item-form {
   animation: bars-appear 1.2s;
 }
+
+.task-item-exit-active {
+  opacity: 0;
+  transition: opacity 700ms ease-out;
+}
