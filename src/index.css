@@ -208,7 +208,9 @@ body {
   border-radius: 10px;
 }
 
-
+.todo-list__item:first-child.todo-list__item:last-child {
+  border-radius: 8px;
+}
 .todo-list__item-content {
   display: flex;
   align-items: center;
@@ -310,7 +312,6 @@ body {
 
 .add-item-form {
   width: 100%;
-  height: -moz-fit-content;
   height: fit-content;
   padding: 10px;
   margin-top: 20px;
